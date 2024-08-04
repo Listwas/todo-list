@@ -45,8 +45,9 @@ function App() {
           <p id="info">asd</p>
         </div>
       </div>
+      <div id="horizontal_line" class="lines"></div>
+
       <footer>
-        <div id="horizontal_line" class="lines"></div>
         {showInput ? (
           <form onSubmit={submit}>
             <input
@@ -54,6 +55,7 @@ function App() {
               value={inputText}
               onChange={change}
               placeholder="Enter text"
+              className="input_style"
             />
           </form>
         ) : (
