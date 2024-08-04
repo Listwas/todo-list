@@ -1,15 +1,34 @@
 import "./App.css";
 import Card from "./Card.jsx";
 import { useState } from "react";
+
 function App() {
   const [items, setItems] = useState([]);
-  const [nextId, setNextId] = useState(1);
+  const [id, setId] = useState(1);
+  const [showInput, setShowInput] = useState(false);
+  const [inputText, setInputText] = useState("");
 
-  const addItem = () => {
-    const newItem = { id: nextId, component: <Card key={nextId} /> };
-    setItems([...items, newItem]);
-    setNextId(nextId + 1);
+  const add = () => {
+    setShowInput(true);
   };
+
+  const submit = (e) => {
+    e.preventDefault();
+    const newItem = {
+      id,
+      text: inputText,
+      component: <Card key={id} text={inputText} />,
+    };
+    setItems([...items, newItem]);
+    setId(id + 1);
+    setShowInput(false);
+    setInputText("");
+  };
+
+  const change = (e) => {
+    setInputText(e.target.value);
+  };
+
   return (
     <>
       <div id="main_cont">
@@ -28,9 +47,20 @@ function App() {
       </div>
       <footer>
         <div id="horizontal_line" class="lines"></div>
-        <button id="button1" onClick={addItem}>
-          add
-        </button>
+        {showInput ? (
+          <form onSubmit={submit}>
+            <input
+              type="text"
+              value={inputText}
+              onChange={change}
+              placeholder="Enter text"
+            />
+          </form>
+        ) : (
+          <button id="button1" onClick={add}>
+            add
+          </button>
+        )}
         <button id="button2">remove</button>
       </footer>
     </>
