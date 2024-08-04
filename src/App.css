@@ -1,0 +1,55 @@
+html,
+body {
+  font-family: monospace, Arial, sans-serif;
+  margin: auto;
+  height: 100%;
+  background-color: hsl(0, 1%, 19%);
+  color: white;
+}
+
+#main_cont {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 94.8vh;
+}
+
+.lines {
+  background-color: grey;
+}
+
+#vertical_line {
+  width: 2px;
+  min-height: 100%;
+}
+
+#horizontal_line {
+  width: 100%;
+  height: 2px;
+}
+
+#left_cont,
+#right_cont {
+  width: 49%;
+  font-size: 1.1rem;
+  padding: 1.5rem;
+}
+
+#button1,
+#button2 {
+  width: 50%;
+  padding: 2px;
+  height: 5vh;
+  border: none;
+}
+
+#button1 {
+  background-color: green;
+}
+
+#button2 {
+  background-color: red;
+}
+footer {
+  display: flex;
+  flex-flow: row wrap;
+}
