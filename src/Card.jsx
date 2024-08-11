@@ -1,18 +1,20 @@
-function Card(props) {
-  const style = {
-    backgroundColor: "grey",
-    padding: "10px",
-    marginLeft: "60px",
-    marginBottom: "10px",
-    border: "1px solid grey",
-    borderRadius: "5px",
-  };
+import "./Card.css";
+
+function Card({ id, text, removeItem, markAsDone, isDone }) {
   return (
-    <>
-      <div style={style}>
-        <p>{props.text}</p>
-      </div>
-    </>
+    <div className={`card ${isDone ? "done" : ""}`}>
+      <p>{text}</p>
+      {!isDone && (
+        <>
+          <button onClick={() => markAsDone(id)} className="done_button">
+            Done
+          </button>
+          <button onClick={() => removeItem(id)} className="remove_button">
+            Remove
+          </button>
+        </>
+      )}
+    </div>
   );
 }
 
