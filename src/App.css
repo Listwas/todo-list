@@ -43,23 +43,14 @@ footer {
   border-top: 1px solid #444;
 }
 
-#button1,
-#button2 {
+#button1 {
   width: 150px;
   height: 26px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-}
-
-#button1 {
   background-color: green;
-  color: white;
-}
-
-#button2 {
-  background-color: red;
   color: white;
 }
 
