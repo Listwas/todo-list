@@ -12,4 +12,4 @@ finished enough. not planning to touch it unless it breaks.
 
 ## live version
 
-link: https://listwas.github.io/todo-list/
+link: https://todo-personal1.netlify.app/
